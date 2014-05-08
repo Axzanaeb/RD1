@@ -14,7 +14,7 @@ public class TxRxSystem {
 	 static double RITMO_BINARIO;
 	 static double DISTANCIA;
 	 
-	 static double Peb=0.1;
+	 static double Pb=0.1;
 	 
 	 double tempoInicial=Simulator.getClock();
 
@@ -24,10 +24,12 @@ public class TxRxSystem {
 	static double delaySys = 0.0;
 	
 
-	public TxRxSystem(int DATA_SIZE, double RITMO_BINARIO, double DISTANCIA){
+	public TxRxSystem(int DATA_SIZE, double RITMO_BINARIO, double DISTANCIA, double Pb, double INTERVAL){
 		this.DATA_SIZE=DATA_SIZE;
 		this.RITMO_BINARIO=RITMO_BINARIO;
 		this.DISTANCIA=DISTANCIA;
+		this.Pb=Pb;
+		this.INTERVAL=INTERVAL;
 	}
 
 
@@ -45,7 +47,7 @@ public class TxRxSystem {
 		
 		/* Variáveis de estado - participantes no sistema */
 		Source     source   = new Source(MAX_DATA, DATA_SIZE, INTERVAL);
-		Receiver   receiver = new Receiver(Peb, DATA_SIZE);
+		Receiver   receiver = new Receiver(Pb, DATA_SIZE);
 		Transmiter transmiter    = new Transmiter(RITMO_BINARIO, DISTANCIA, DATA_SIZE);
 				
 		/* Evento que arranca a simulação - abertura do serviço no instante 0.0 */
