@@ -75,10 +75,10 @@ public class Main {
 		btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int size=Integer.parseInt((String) streamSize.getSelectedItem());
-				double rate= Integer.parseInt((String) binaryRate.getSelectedItem());
-				double dist = Integer.parseInt((String) d.getSelectedItem());
-				double Pb= Integer.parseInt((String) PbBox.getSelectedItem());
-				double TxG = Integer.parseInt((String) TaxGn.getSelectedItem());
+				double rate= Double.parseDouble((String) binaryRate.getSelectedItem());
+				double dist = Double.parseDouble((String) d.getSelectedItem());
+				double Pb= Double.parseDouble((String) PbBox.getSelectedItem());
+				double TxG = Double.parseDouble((String) TaxGn.getSelectedItem());
 				
 				
 				TxRxSystem TxRx = new TxRxSystem(size, rate, dist, Pb, TxG);
